@@ -2,8 +2,10 @@ import { NavLink } from 'react-router-dom';
 import { FaEllipsisV } from "react-icons/fa";
 import LanguageSelectorModal from './LanguageSelectorModal';
 import {useTranslation} from "react-i18next";
+import {  getCurrentUser } from '../../actions/authActions';
 
 const Head = props => {
+  const user = getCurrentUser();
   const {t, i18n} = useTranslation();
   return (
     <div className="container p-0">
@@ -39,15 +41,15 @@ const Head = props => {
                     >
                       {t('language')}
                     </a>
-                    <div className="dropdown-divider"></div>
-                    <a
+                    
+                    {user&&<><div className="dropdown-divider"></div><a
                       className="dropdown-item"
                       href="#"
                       data-toggle="modal"
                       data-target="#signOut"
                     >
                        {t('auth.signout')}
-                    </a>
+                    </a></>} 
                 </div>
               </div>
           </li>
