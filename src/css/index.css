@@ -1,36 +1,9 @@
-a {
-  color: #292b2c !important;
- }
- a:hover{
-     text-decoration: none !important;
- }
- .searchBar{
-     width:13rem;
-     height:1.8rem;
-     font-size: 0.8rem;
- }
- 
+
  .theBorder{
      border: 1px solid #dbdbdb;
  }
- .bg-first {
-   background-color: #0187b3;
- }
- 
- .text-first {
-   color: #0187b3;
- }
- .bottom-first {
-   border-bottom: 1px solid #0187b3;
- }
- 
    .bg-second{
      background-color:#f1f2f3;
-   }
-   
-   .btn-first {
-     background-color: #0187b3;
-     color:#fff;
    }
    .bg-second {
      background-color: #fdfdfd;

@@ -49,11 +49,11 @@ const SignUp = props => {
                   </div>
                   {t('auth.getStarted')}
                 </div>
-                <FormikField name="username" style="mt-3" type="text" placeholder="Username"  handleChange={handleChange} errors = {errors} touched={touched} />
-                <FormikField name="password" style="mt-3" type="password" placeholder="Password" handleChange={handleChange} errors= {errors}  touched={touched}/>
+                <FormikField name="username" style="mt-3" type="text" placeholder={t('auth.username')}  handleChange={handleChange} errors = {errors} touched={touched} />
+                <FormikField name="password" style="mt-3" type="password" placeholder={t('auth.password')} handleChange={handleChange} errors= {errors}  touched={touched}/>
                 
                 <div className="form-group">
-                  <button type="submit" className="btn btn-first btn-block mt-3">
+                  <button type="submit" className="btn btn-primary btn-block mt-3">
                   {t('auth.signup')}
                   </button>
                 </div>
