@@ -1,10 +1,10 @@
 import api from './';
 
- export const register = (username, email, password) => dispatch => {
-  dispatch({ type: 'AUTH_BEGIN' });
-  return api.post(`auth/registrations`, {
+ export const register = (username, password) => dispatch => {
+   console.log(username, password);
+  dispatch({ type: 'SIGNUP_BEGIN' });
+  return api.post(`/users`, {
     username,
-    email,
     password,
   })
     .then(response => {

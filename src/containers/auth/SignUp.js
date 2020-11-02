@@ -21,7 +21,7 @@ const SignUp = props => {
   const handleSubmit = (values) =>{
     setError('');
     setLoading(true);
-    dispatch(register(values.username, values.email, values.password))
+    dispatch(register(values.username, values.password))
     .then(res => {
       if (res.error) {
         setLoading(false);
