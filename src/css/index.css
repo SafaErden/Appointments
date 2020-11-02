@@ -1,0 +1,67 @@
+a {
+  color: #292b2c !important;
+ }
+ a:hover{
+     text-decoration: none !important;
+ }
+ .searchBar{
+     width:13rem;
+     height:1.8rem;
+     font-size: 0.8rem;
+ }
+ 
+ .theBorder{
+     border: 1px solid #dbdbdb;
+ }
+ .bg-first {
+   background-color: #0187b3;
+ }
+ 
+ .text-first {
+   color: #0187b3;
+ }
+ .bottom-first {
+   border-bottom: 1px solid #0187b3;
+ }
+ 
+   .bg-second{
+     background-color:#f1f2f3;
+   }
+   
+   .btn-first {
+     background-color: #0187b3;
+     color:#fff;
+   }
+   .bg-second {
+     background-color: #fdfdfd;
+   }
+   a{
+     color:#181717;
+   }
+   
+   .divider-text {
+     position: relative;
+     text-align: center;
+     margin-top: 15px;
+     margin-bottom: 15px;
+   }
+   .divider-text span {
+     padding: 7px;
+     font-size: 12px;
+     position: relative;   
+     z-index: 2;
+   }
+   .divider-text:after {
+     content: "";
+     position: absolute;
+     width: 100%;
+     border-bottom: 1px solid #ddd;
+     top: 55%;
+     left: 0;
+     z-index: 1;
+   }
+   
+   .centered-label {
+     display: flex;
+     align-items: center;
+   }

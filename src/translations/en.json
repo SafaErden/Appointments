@@ -1,0 +1,35 @@
+{   
+    "validation": {
+        "blank": "Can't be blank",
+        "min2": "Minimum 2 characters required",
+        "validMail": "Should be a valid email",
+        "complexity": "Should contain at leat X char, Y nums....",
+        "notAllowed": "Only XYZ are allowed",
+        "matchs": "Passwords shuld match",
+        "unique": "This is in use, please select another one."
+    },
+    "auth": {
+        "signup": "Sign Up",
+        "signin": "Sign In",
+        "remind": "Reminder",
+        "getStarted": "Get started with your free account to discover new worlds.",
+        "username": "User name",
+        "email": "Email Address",
+        "password": "Password",
+        "confirm": "Password Confirmation",
+        "agree": "By signing up you agree to our",
+        "terms": "Terms & Privacy Policy",
+        "or": "or",
+        "have?": "Have an account?",
+        "forgot?": "Forgot password?",
+        "dontHave?": "Don't you have an account?",
+        "letsSend": "Enter your username or email address and we send you a link so you can log back into your account.",
+        "sendMe": "Send me the link",
+        "ifDont?": "If you don't have an account",
+        "remember?": "Remember password?"
+    },
+    "footer": {
+        "courses": "All Courses",
+        "library": "My Courses"
+    }
+}

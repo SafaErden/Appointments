@@ -1,25 +1,36 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import Courses from './containers/course/Courses';
+import CourseDetail from './containers/course/CourseDetail';
+import UserCourses from './containers/course/UserCourses';
+import SignIn from './containers/auth/SignIn';
+import SignUp from './containers/auth/SignUp';
+import Header from './containers/header';
+import Footer from './containers/footer';
+import NoMatch from './components/noMatch';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const App = () => {
+    return (
+        <BrowserRouter>
+        <div className="container-fluid bg-white p-0 m-0  border-bottom shadow-sm">
+          <Header />
+        </div>
+        <div className="container p-0">
+          <Switch>{/*
+              <Route path="/" exact component={Courses} />
+              <Route path="/courses"  component={Courses} />
+              <Route path="/detail/:id"  component={CourseDetail} />
+              <Route path="/myCourses"  component={UserCourses} />
+              <Route path="/signin"  component={SignIn} />
+              <Route path="/signup"  component={SignUp} />
+          <Route component={NoMatch}/>*/}
+          </Switch>
+        </div>
+        
+        <div className="container-fluid bg-dark fixed-bottom border-top p-0 shadow-lg"> 
+          <Footer />
+        </div>
+        </BrowserRouter>
+    );
 }
 
 export default App;
