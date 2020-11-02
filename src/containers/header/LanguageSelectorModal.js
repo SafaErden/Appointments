@@ -1,5 +1,7 @@
 import {Formik, Form} from 'formik';
 import  FormikField from "../../components/FormikField";
+import {useTranslation} from "react-i18next";
+
 const handleSubmit = (option) =>{
   localStorage.setItem('lang', option.target.value);
   window.location.reload();
@@ -11,7 +13,7 @@ const languages = {
 }
 
 const LanguageSelectorModal = () => {
-  
+  const {t, i18n} = useTranslation();
   const lang = localStorage.getItem('lang') || 'en';
   const options = Object.keys(languages).map(function(key,index) {
     const selected = lang===key ? "selected" : "";
@@ -23,7 +25,7 @@ const LanguageSelectorModal = () => {
           <div className="modal-dialog">
             <div className="modal-content">
               <div className="modal-header">
-                <h5 className="modal-title">Selecyour preferred language</h5>
+                <h5 className="modal-title">{t('selectLanguage')}</h5>
                 <button className="close" data-dismiss="modal">
                   <span>&times;</span>
                 </button>
@@ -41,8 +43,7 @@ const LanguageSelectorModal = () => {
                 </Formik>
               </div>
               <div className="modal-footer">
-                <button type="button" className="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" className="btn bg-first text-white" data-dismiss="modal">Submit</button>
+                <button type="button" className="btn btn-secondary" data-dismiss="modal">{t('close')}</button>
               </div>
             </div>
           </div>

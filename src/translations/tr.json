@@ -1,4 +1,12 @@
-{   
+{   "brand": "Macroverse",
+    "language": "Dil",
+    "selectLanguage": "Dil seçimini yapın.",
+    "languages ": {
+        "en": "İngilizce",
+        "tr": "Türkçe"
+    },
+    "close": "Kapat",
+    "noCourse": "Hiç kurs bulunamadı!",
     "validation": {
     "blank": "Boş bırakılamaz.",
     "min2": "En az iki karakterden oluşmalıdır.",
@@ -11,6 +19,7 @@
 "auth" : {
     "signup": "Hesap Oluştur",
     "signin": "Giriş Yap",
+    "signout": "Çıkış Yap",
     "remind": "Hatırlatıcı",
     "getStarted": "Ücretsiz hesabınızı başlatın ve yeni dünyalar keşfedin",
     "username": "Kullanıcı Adı",

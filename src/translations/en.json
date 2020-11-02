@@ -1,4 +1,12 @@
-{   
+{   "brand": "Macroverse",
+    "language": "Language",
+    "selectLanguage": "Select your preferred language.",
+    "languages ": {
+        "en": "English",
+        "tr": "Turkish"
+    },
+    "close": "Close",
+    "noCourse": "No course found!",
     "validation": {
         "blank": "Can't be blank",
         "min2": "Minimum 2 characters required",
@@ -11,6 +19,7 @@
     "auth": {
         "signup": "Sign Up",
         "signin": "Sign In",
+        "signout": "Sign Out",
         "remind": "Reminder",
         "getStarted": "Get started with your free account to discover new worlds.",
         "username": "User name",
