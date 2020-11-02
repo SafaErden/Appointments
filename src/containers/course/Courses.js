@@ -3,8 +3,13 @@ import { setCourses } from '../../actions/courseActions';
 import { useSelector, useDispatch } from 'react-redux';
 import Loader from '../../components/Loader';
 import {useTranslation} from "react-i18next";
+import { useHistory } from 'react-router-dom';
+import PropTypes from 'prop-types';
+import { getCurrentUser } from '../../actions/authActions';
 
 const Courses = () => {
+  let history = useHistory();
+  const user = getCurrentUser();
   const { courses, loading } = useSelector(state => ({
     courses: state.courseReducer.courses,
     loading: state.courseReducer.loading,
@@ -20,6 +25,7 @@ const Courses = () => {
  
   return (
       <>
+        {!user&&history.push("/signin")}
         {loading &&
           (<Loader loading />)
         }
@@ -36,5 +42,12 @@ const Courses = () => {
     </>
   );
 }
+Courses.propTypes = {
+  history: PropTypes.string,
+};
+
+Courses.defaultProps = {
+  history: '/',
+};
 
 export default Courses;

@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Switch, Redirect  } from 'react-router-dom';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Courses from './containers/course/Courses';
 import CourseDetail from './containers/course/CourseDetail';
 import UserCourses from './containers/course/UserCourses';
@@ -8,17 +8,7 @@ import Header from './containers/header';
 import Footer from './containers/footer';
 import NoMatch from './components/noMatch';
 
-import { getCurrentUser } from './actions/authActions';
-
 const App = () => {
-    const user = getCurrentUser();
-    /*
-    if (!user) return (
-      <BrowserRouter>
-        <Redirect to="/signin" />
-      </BrowserRouter>
-    );
-    */
     return (
         <BrowserRouter>
         <div className="container-fluid bg-dark p-0 m-0  border-bottom shadow-sm">
@@ -41,5 +31,4 @@ const App = () => {
         </BrowserRouter>
     );
 }
-
 export default App;

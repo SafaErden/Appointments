@@ -1,7 +1,7 @@
 import {useState} from 'react';
 import { useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
-import { register } from '../../actions/authActions';
+import { register, getCurrentUser } from '../../actions/authActions';
 import Loader from '../../components/Loader';
 import Error from '../../components/Error';
 import {Formik, Form} from 'formik';
@@ -9,13 +9,15 @@ import  FormikField from "../../components/FormikField";
 import {formValidationSchema} from "../../validations/formValidations";
 import {FaUserCircle} from "react-icons/fa";
 import {useTranslation} from "react-i18next";
-import { NavLink } from 'react-router-dom';
+import {  NavLink, useHistory } from 'react-router-dom';
 
 const SignUp = props => {
+  let history = useHistory();
   const dispatch = useDispatch();
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
   const {t, i18n} = useTranslation();
+  const user = getCurrentUser();
   const handleSubmit = (values) =>{
     setError('');
     setLoading(true);
@@ -31,6 +33,7 @@ const SignUp = props => {
   }
   return (
     <div className="row m-0 p-5 justify-content-around align-items-center theBorder bg-white">
+        {user&&history.push("/")}
         <Formik onSubmit = {handleSubmit} initialValues={{email: "", username: "", password: "", passwordConfirmation: ""}} validationSchema={formValidationSchema}>
             {({handleChange, errors, touched}) => (
               <Form className="col-12 col-sm-9 col-md-6 col-lg-4">
@@ -59,7 +62,7 @@ const SignUp = props => {
                 </p>
                 <p className="text-center">
                 {t('auth.have?')}{" "}
-                  <NavLink  to={`/signIn`} className="font-weight-bold">{t('auth.signin')}</NavLink>
+                  <NavLink  to={`/signin`} className="font-weight-bold">{t('auth.signin')}</NavLink>
                 </p>
               </Form>
             )

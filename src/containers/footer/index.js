@@ -11,7 +11,7 @@ const Footer = () => {
       <div className="container p-0">
         <div className="row justify-content-around m-0 p-0 py-1">
           <div className="col py-2 text-center">
-          <NavLink  to={`/courses`} className="text-white" activeClassName='font-weight-bold'>
+          <NavLink  to={`/`} className="text-white" activeClassName='font-weight-bold'>
               <h3 className="d-md-none m-0 p-0">
                 <FaBook/>
               </h3>
