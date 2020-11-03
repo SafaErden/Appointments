@@ -1,27 +1,27 @@
 const initState = {
     courses : [],
     loading : false,
-    errors : ""
-}
+    errors : null,
+};
 
 const coursesReducer = (state = initState, action) => {
   switch (action.type) {
-    case 'COURSES_SUCCESS':
+    case 'SUCCESS_COURSES':
       return {
         ...state,
         loading: false,
-        isLoggedIn: true,
+        courses: action.payload.course,
       };
-    case 'COURSES_BEGIN':
+    case 'BEGIN_COURSES':
       return {
         ...state,
         loading: true,
       };
-    case 'COURSES_ERROR':
+    case 'ERROR_COURSES':
       return {
         ...state,
         loading: false,
-        isLoggedIn: false,
+        errors: action.errors,
       };
     default:
       return state;

@@ -3,7 +3,6 @@ import {initReactI18next} from 'react-i18next';
 
 import common_en from "./en.json";
 import common_tr from "./tr.json";
-console.log(common_en.auth.signup)
 const resources = {
     en: {
         translation: common_en

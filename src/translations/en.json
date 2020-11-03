@@ -6,6 +6,7 @@
         "tr": "Turkish"
     },
     "close": "Close",
+    "details": "Details",
     "noCourse": "No course found!",
     "validation": {
         "blank": "Can't be blank",

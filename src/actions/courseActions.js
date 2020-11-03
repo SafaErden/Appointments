@@ -4,7 +4,7 @@ import authHeader from './authActions';
 export const setCourses = () => async dispatch => {
   try {
     dispatch({ type: 'BEGIN_COURSES' });
-    const response = await api.get('/course', { headers: authHeader() });
+    const response = await api.get('/courses', { headers: authHeader() });
     dispatch({
       type: 'SUCCESS_COURSES',
       payload: response.data,

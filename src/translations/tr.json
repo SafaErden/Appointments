@@ -6,6 +6,7 @@
         "tr": "Türkçe"
     },
     "close": "Kapat",
+    "details": "Detaylar",
     "noCourse": "Hiç kurs bulunamadı!",
     "validation": {
     "blank": "Boş bırakılamaz.",
