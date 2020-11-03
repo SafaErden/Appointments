@@ -25,12 +25,14 @@ const CourseDetail = ({match}) => {
   const handleSubmit = (values) =>{
     setError('');
     setLoading(true);
-    dispatch(bookCourse(values.timezones))
+    dispatch(bookCourse(values.user_id,values.course_id,values.timezone))
     .then(res => {
-      if (res.error) {
+      if (res) {
+        console.log(res);
         setLoading(false);
-        setError(res.error);
+        setError(res);
       } else {
+        history.push("/myCourses");
       }
     })
     .then(() => setLoading(false));
@@ -66,12 +68,15 @@ const CourseDetail = ({match}) => {
         <div className="card-body">
           
           <p className="card-text">{course.description}</p>
-          <Formik onSubmit = {handleSubmit} initialValues={{timezones: "UTC+1"}}>
+          <Formik onSubmit = {handleSubmit} initialValues={{timezones: "UTC-6", user_id:`${user.user}`, course_id:`${id}`}}>
                     {()=> (
                     <Form>
                       <FormikField as="select" name="timezones" classProp="w-50 mr-auto ml-auto">
                         {options}
-                      </FormikField>
+                      </FormikField> 
+                      
+                      <FormikField name="user_id" style="d-none" type="text" /> 
+                      <FormikField name="course_id" style="d-none" type="text" />
                       <Link to="/" className="btn btn-dark m-3">{t('goBack')}</Link>
                       <button type="submit" className="btn btn-primary m-3">
                         {t('bookCourse')}

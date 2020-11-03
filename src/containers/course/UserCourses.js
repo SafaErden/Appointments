@@ -1,19 +1,20 @@
 import { useEffect } from 'react';
 import { getCourses } from '../../actions/courseActions';
 import { useSelector, useDispatch } from 'react-redux';
-import PropTypes from 'prop-types';
 import Loader from '../../components/Loader';
 import {useTranslation} from "react-i18next";
-import { useHistory } from 'react-router-dom';
+import { useHistory, Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import { getCurrentUser } from '../../actions/authActions';
 
 const UserCourses = () => {
   let history = useHistory();
   const user = getCurrentUser();
   const { courses, loading } = useSelector(state => ({
-    courses: state.courseReducer.courses,
-    loading: state.courseReducer.loading,
+    courses: state.myCourseReducer.myCourses,
+    loading: state.myCourseReducer.loading,
   }));
+
   const {t, i18n} = useTranslation();
 
   const dispatch = useDispatch();
@@ -21,7 +22,17 @@ const UserCourses = () => {
   useEffect(() => {
     dispatch(getCourses());
   }, [dispatch]);
+  const content = courses.map(course => (
+    <div className="card">
+      {/*<img className="card-img-top" src="..." alt="Card image cap"/>*/}
+        <div className="card-body">
+          <h5 className="card-title">{course.name}</h5>
+          <p className="card-text">{`${course.description.slice(0, 200)}...`}</p>
+          <Link to={`/courses/${course.id}`} className="btn btn-primary">{t('details')}</Link>
 
+        </div>
+      </div>
+  ));
  
   return (
       <>
@@ -34,10 +45,8 @@ const UserCourses = () => {
           {t('noCourse')}
         </p>
       ) : (
-        <div>
-            {courses.map(c => 
-              <div>{c.content}</div> 
-            )}
+        <div className="card-columns">
+          {content}
         </div>)}
     </>
   );
