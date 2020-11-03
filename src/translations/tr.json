@@ -7,6 +7,8 @@
     },
     "close": "Kapat",
     "details": "Detaylar",
+    "goBack": "Geri Dön",
+    "bookCourse": "Başvur",
     "noCourse": "Hiç kurs bulunamadı!",
     "validation": {
     "blank": "Boş bırakılamaz.",

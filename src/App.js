@@ -14,10 +14,10 @@ const App = () => {
         <div className="container-fluid bg-dark p-0 m-0  border-bottom shadow-sm">
           <Header />
         </div>
-        <div className="container p-0">
+        <div className="container p-0 mt-3">
           <Switch>
               <Route path="/" exact component={Courses} />
-              <Route path="/courses" component={Courses} />
+              <Route path="/courses" exact component={Courses} />
               <Route path="/courses/:id"  component={CourseDetail} />
               <Route path="/myCourses"  component={UserCourses} />
               <Route path="/signin"  component={SignIn} />

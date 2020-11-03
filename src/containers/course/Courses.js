@@ -14,7 +14,6 @@ const Courses = () => {
     courses: state.courseReducer.courses,
     loading: state.courseReducer.loading,
   }));
-  console.log(courses);
 
   const {t, i18n} = useTranslation();
 

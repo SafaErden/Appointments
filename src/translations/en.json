@@ -8,6 +8,8 @@
     "close": "Close",
     "details": "Details",
     "noCourse": "No course found!",
+    "goBack": "Go Back",
+    "bookCourse": "Book Course",
     "validation": {
         "blank": "Can't be blank",
         "min2": "Minimum 2 characters required",
