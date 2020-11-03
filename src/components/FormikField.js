@@ -1,13 +1,12 @@
 import {Field} from 'formik';
 
-const FormikField = ({style="", as="", name="", handleChange="", errors="", touched="", type="", ...props}) => {
+const FormikField = ({classProp="", style="", as="", name="", errors="", touched="", type="", ...props}) => {
     const className= errors[name] && touched[name] ? "border rounded border-danger" : "";
     return(
         <>
-        <div className={`form-group input-group m-0 ${className} ${style}`}>
+        <div className={`form-group input-group m-0 ${className} ${style} ${classProp}`}>
             <Field
                 {...props}
-                /*onChange={handleChange}*/
                 name={name}
                 className="form-control"
                 type={type}
