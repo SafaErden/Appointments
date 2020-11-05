@@ -8,6 +8,7 @@ import PropTypes from 'prop-types';
 import {Formik, Form} from 'formik';
 import  FormikField from "../../components/FormikField";
 import { getCurrentUser } from '../../actions/authActions';
+import {BsCaretLeft} from 'react-icons/bs';
 
 const CourseDetail = ({match}) => {
   const dispatch = useDispatch();
@@ -58,39 +59,33 @@ const CourseDetail = ({match}) => {
           {t('noCourse')}
         </p>
       ) : (
-        <div className="border w-100 d-flex justify-content-center my-4 flex-column rounded shadow-lg">
-       {/*<img className="card-img-top" src="..." alt="Card image cap"/>*/}
-      <div className="card text-center">
-        <div className="card-header">
-          <h5 className="card-title">{course.name}</h5>
-        </div>
-        <div className="card-body">
-          
-          <p className="card-text">{course.description}</p>
-          <Formik onSubmit = {handleSubmit} initialValues={{timezone: "UTC-6", user_id:`${user.user}`, course_id:`${id}`}}>
-                    {()=> (
-                    <Form>
-                      <FormikField as="select" name="timezone" classProp="w-50 mr-auto ml-auto">
-                        {options}
-                      </FormikField> 
-                      
-                      <FormikField name="user_id" style="d-none" type="text" /> 
-                      <FormikField name="course_id" style="d-none" type="text" />
-                      <Link to="/" className="btn btn-dark m-3">{t('goBack')}</Link>
-                      <button type="submit" className="btn btn-primary m-3">
-                        {t('bookCourse')}
-                      </button>
-                    </Form>
-                  )
-                  }
-                </Formik>
-               
-        </div>
-        <div className="card-footer text-muted">
+      <div className="row position-relative w-100 h-100">
+        <div className="col-9 bg-white transparent  d-flex flex-column align-items-left justify-content-center">
+          <p className="card-text h5">{course.description}</p>
           <small><em>macroverse 2020</em></small>
         </div>
+        <div className="col-3">
+          <h3 className="card-title text-white mb-5">{course.name}</h3>
+          <Formik onSubmit = {handleSubmit} initialValues={{timezone: "UTC-6", user_id:`${user.user}`, course_id:`${id}`}}>
+            {()=> (
+            <Form>
+              <FormikField as="select" name="timezone" classProp="w-100">
+                {options}
+              </FormikField> 
+              
+              <FormikField name="user_id" style="d-none" type="text" /> 
+              <FormikField name="course_id" style="d-none" type="text" />
+              
+              <button type="submit" className="btn btn-success w-100 mt-3">
+                {t('bookCourse')}
+              </button>
+            </Form>
+          )
+          }
+        </Formik>
+        </div>
+        <Link to="/" className="btn-circle btn-lg m-3 absolute-btn bg-success text-white"><BsCaretLeft /></Link>
       </div>
-    </div>
         )}
     </>
   );

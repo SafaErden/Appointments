@@ -38,7 +38,7 @@ const Courses = () => {
       {/*<img className="card-img-top" src="..." alt="Card image cap"/>*/}
         <div className="card-body text-white">
           <h5 className="card-title">{course.name}</h5>
-          <p className="card-text">{`${course.description.slice(0, 200)}...`}</p>
+          <p className="card-text">{`${course.description.slice(0, 150)}...`}</p>
         </div>
         </Link>
       </div>

@@ -35,7 +35,7 @@ const UserCourses = () => {
     dispatch(getCourses());
   }, [dispatch]);
   const content = courses.map(course => (
-    <div key={Math.random()} className="border w-100 d-flex justify-content-center my-4 flex-column rounded shadow-lg">
+    <div key={Math.random()} className="w-100 d-flex justify-content-center my-4 flex-column shadow-lg">
     <div className="card">
         <div className="card-header">
           <h5 className="card-title">{course.name}</h5>

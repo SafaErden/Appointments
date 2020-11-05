@@ -37,7 +37,7 @@ const SignUp = props => {
         {user&&history.push("/")}
         <Formik onSubmit = {handleSubmit} initialValues={{email: "", username: "", password: "", passwordConfirmation: ""}} validationSchema={formValidationSchema}>
             {({handleChange, errors, touched}) => (
-              <Form className="col-12 col-sm-9 col-md-6 col-lg-4">
+              <Form className="col-12 col-sm-9">
                 <div className="text-center mb-3">
                   {loading && 
                       (<Loader loading />)
