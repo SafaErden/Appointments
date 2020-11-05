@@ -5,31 +5,30 @@ import UserCourses from './containers/course/UserCourses';
 import SignIn from './containers/auth/SignIn';
 import SignUp from './containers/auth/SignUp';
 import Header from './containers/header';
-import Footer from './containers/footer';
 import NoMatch from './components/noMatch';
 
 const App = () => {
     return (
-        <BrowserRouter>
-        <div className="container-fluid bg-dark p-0 m-0  border-bottom shadow-sm">
-          <Header />
+      <div className="container-fluid min-vh-100">
+        <div className="row min-vh-100">
+          <BrowserRouter>
+          <div className="col-auto p-0 m-0  border-right shadow-lg">
+            <Header />
+          </div>
+          <div className="col d-flex p-0 m-0 align-items-center justify-content-center">
+            <Switch>
+                <Route path="/" exact component={Courses} />
+                <Route path="/courses" exact component={Courses} />
+                <Route path="/courses/:id"  component={CourseDetail} />
+                <Route path="/myCourses"  component={UserCourses} />
+                <Route path="/signin"  component={SignIn} />
+                <Route path="/signup"  component={SignUp} />
+                <Route component={NoMatch}/>
+            </Switch>
+          </div>
+          </BrowserRouter>
         </div>
-        <div className="container p-0 mt-3">
-          <Switch>
-              <Route path="/" exact component={Courses} />
-              <Route path="/courses" exact component={Courses} />
-              <Route path="/courses/:id"  component={CourseDetail} />
-              <Route path="/myCourses"  component={UserCourses} />
-              <Route path="/signin"  component={SignIn} />
-              <Route path="/signup"  component={SignUp} />
-              <Route component={NoMatch}/>
-          </Switch>
-        </div>
-        
-        <div className="container-fluid bg-dark fixed-bottom border-top p-0 shadow-lg"> 
-          <Footer />
-        </div>
-        </BrowserRouter>
+      </div>
     );
 }
 export default App;

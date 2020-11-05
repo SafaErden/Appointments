@@ -11,6 +11,7 @@
     "cancel": "Cancel",
     "goBack": "Go Back",
     "bookCourse": "Book Course",
+    "reserved": "ALL RIGHTS RESERVED",
     "validation": {
         "blank": "Can't be blank",
         "min2": "Minimum 2 characters required",

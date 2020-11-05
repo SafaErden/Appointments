@@ -1,40 +1,46 @@
 
  .theBorder{
      border: 1px solid #dbdbdb;
- }
-   .bg-second{
-     background-color:#f1f2f3;
-   }
-   .bg-second {
-     background-color: #fdfdfd;
-   }
-   a{
-     color:#181717;
-   }
-   
-   .divider-text {
-     position: relative;
-     text-align: center;
-     margin-top: 15px;
-     margin-bottom: 15px;
-   }
-   .divider-text span {
-     padding: 7px;
-     font-size: 12px;
-     position: relative;   
-     z-index: 2;
-   }
-   .divider-text:after {
-     content: "";
-     position: absolute;
-     width: 100%;
-     border-bottom: 1px solid #ddd;
-     top: 55%;
-     left: 0;
-     z-index: 1;
-   }
-   
-   .centered-label {
-     display: flex;
-     align-items: center;
-   }
+}
+.bg-second{
+  background-color:#f1f2f3;
+}
+.bg-second {
+  background-color: #fdfdfd;
+}
+a{
+  color:#181717;
+}
+
+.divider-text {
+  position: relative;
+  text-align: center;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+.divider-text span {
+  padding: 7px;
+  font-size: 12px;
+  position: relative;   
+  z-index: 2;
+}
+.divider-text:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  border-bottom: 1px solid #ddd;
+  top: 55%;
+  left: 0;
+  z-index: 1;
+}
+
+.centered-label {
+  display: flex;
+  align-items: center;
+}
+.brand {
+  font-family: 'Merienda One', Helvetica, sans-serif;
+  color: rgba(0,0,0,0.7);
+  text-shadow: 3px 3px 3px #fff;
+  transform: rotate(-10deg);
+}
