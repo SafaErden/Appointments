@@ -22,15 +22,25 @@ const Courses = () => {
   useEffect(() => {
     dispatch(setCourses());
   }, [dispatch]);
-  const content = courses.map(course => (
-    <div className="card">
+  const bg = [
+    "primary",
+    "danger",
+    "success",
+    "warning",
+    "success",
+    "info",
+    "danger"
+  ]
+  const content = courses.map((course, index) => (
+    
+    <div className={`col-12 col-md-4 col-lg-3 m-0 bg-${bg[index]} transparent`}>
+      <Link to={`/courses/${course.id}`} >
       {/*<img className="card-img-top" src="..." alt="Card image cap"/>*/}
-        <div className="card-body">
+        <div className="card-body text-white">
           <h5 className="card-title">{course.name}</h5>
           <p className="card-text">{`${course.description.slice(0, 200)}...`}</p>
-          <Link to={`/courses/${course.id}`} className="btn btn-primary">{t('details')}</Link>
-
         </div>
+        </Link>
       </div>
   ));
  
@@ -45,7 +55,7 @@ const Courses = () => {
           {t('noCourse')}
         </p>
       ) : (
-        <div className="card-columns">
+        <div className="row">
           {content}
         </div>)}
     </>

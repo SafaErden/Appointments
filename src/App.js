@@ -15,7 +15,7 @@ const App = () => {
           <div className="col-auto p-0 m-0  border-right shadow-lg">
             <Header />
           </div>
-          <div className="col d-flex p-0 m-0 align-items-center justify-content-center">
+          <div className="col d-flex p-5 m-0 align-items-center justify-content-center cover">
             <Switch>
                 <Route path="/" exact component={Courses} />
                 <Route path="/courses" exact component={Courses} />

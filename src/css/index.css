@@ -44,3 +44,12 @@ a{
   text-shadow: 3px 3px 3px #fff;
   transform: rotate(-10deg);
 }
+
+.transparent {
+  opacity: 0.7
+}
+
+.cover {
+  background-image: url("../assets/bg.jpg");
+  background-size: cover; 
+}
