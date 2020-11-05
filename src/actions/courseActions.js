@@ -40,3 +40,16 @@ export const bookCourse = (userId, courseId, timezone) => async dispatch => {
     dispatch({ type: 'ERROR_APPOINTMENT', payload: error });
   }
 };
+
+export const removeCourse = (id) => async dispatch => {
+  try {
+    dispatch({ type: 'BEGIN_MY_COURSES' });
+    const response = await api.delete(`/appointments/${id}`,{id: id}, { headers: authHeader() });
+    dispatch({
+      type: 'SUCCESS_MY_COURSES',
+      payload: response.data,
+    });
+  } catch (error) {
+    dispatch({ type: 'ERROR_MY_COURSES', payload: error });
+  }
+};

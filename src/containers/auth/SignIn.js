@@ -28,6 +28,7 @@ const SignIn = props => {
         setLoading(false);
         setError(res.error);
       } else {
+        window.location.reload();
       }
     })
     .then(() => setLoading(false));

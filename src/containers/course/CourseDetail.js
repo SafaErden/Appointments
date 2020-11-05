@@ -28,7 +28,6 @@ const CourseDetail = ({match}) => {
     dispatch(bookCourse(values.user_id,values.course_id,values.timezone))
     .then(res => {
       if (res) {
-        console.log(res);
         setLoading(false);
         setError(res);
       } else {
@@ -39,7 +38,7 @@ const CourseDetail = ({match}) => {
   }
   
   const options = Object.keys(timezones).map(function(key,index) {
-    return (<option value={key} key={index}>{timezones[key]}</option>);
+    return (<option value={timezones[key]} key={index}>{timezones[key]}</option>);
   });
 
   const { courses } = useSelector(state => ({
@@ -68,10 +67,10 @@ const CourseDetail = ({match}) => {
         <div className="card-body">
           
           <p className="card-text">{course.description}</p>
-          <Formik onSubmit = {handleSubmit} initialValues={{timezones: "UTC-6", user_id:`${user.user}`, course_id:`${id}`}}>
+          <Formik onSubmit = {handleSubmit} initialValues={{timezone: "UTC-6", user_id:`${user.user}`, course_id:`${id}`}}>
                     {()=> (
                     <Form>
-                      <FormikField as="select" name="timezones" classProp="w-50 mr-auto ml-auto">
+                      <FormikField as="select" name="timezone" classProp="w-50 mr-auto ml-auto">
                         {options}
                       </FormikField> 
                       

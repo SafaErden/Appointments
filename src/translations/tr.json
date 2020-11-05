@@ -10,6 +10,7 @@
     "goBack": "Geri Dön",
     "bookCourse": "Başvur",
     "noCourse": "Hiç kurs bulunamadı!",
+    "cancel": "İptal et",
     "validation": {
     "blank": "Boş bırakılamaz.",
     "min2": "En az iki karakterden oluşmalıdır.",

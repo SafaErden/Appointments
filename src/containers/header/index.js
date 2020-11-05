@@ -1,17 +1,20 @@
+import { useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import { FaEllipsisV } from "react-icons/fa";
 import LanguageSelectorModal from './LanguageSelectorModal';
 import {useTranslation} from "react-i18next";
-import {  getCurrentUser } from '../../actions/authActions';
 import { logout } from '../../actions/authActions';
 
 const Head = props => {
   const handleLogOut = () => {
     logout();
     window.location.reload();
-    let user = getCurrentUser();
   }
-  let user = getCurrentUser();
+  
+  const { isLoggedIn } = useSelector(state => ({
+    isLoggedIn: state.authReducer.isLoggedIn
+  }));
+  
   const {t, i18n} = useTranslation();
   return (
     <div className="container p-0">
@@ -47,8 +50,7 @@ const Head = props => {
                     >
                       {t('language')}
                     </a>
-                    {console.log(user)}
-                    {user&&<>
+                    {isLoggedIn&&<>
                     <div className="dropdown-divider"></div>
                     <a
                       className="dropdown-item"
