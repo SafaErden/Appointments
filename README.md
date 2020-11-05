@@ -2,6 +2,8 @@
 
 A tablet web app for enrolling macroverse online courses.
 
+![screenshot](./src/asssets/screen.JPG)
+
 ## About this project
 
 This Application is built as a front end app consuming a Ruby on Rails [API](https://fathomless-shelf-78681.herokuapp.com/) separately deployed to Heroku.
