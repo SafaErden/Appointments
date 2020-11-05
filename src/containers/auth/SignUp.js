@@ -53,8 +53,8 @@ const SignUp = () => {
               </div>
               {t('auth.getStarted')}
             </div>
-            <FormikField name="username" style="mt-3" type="text" placeholder={t('auth.username')} handleChange={handleChange} errors={errors} touched={touched} />
-            <FormikField name="password" style="mt-3" type="password" placeholder={t('auth.password')} handleChange={handleChange} errors={errors} touched={touched} />
+            <FormikField name="username" styles="mt-3" type="text" placeholder={t('auth.username')} handleChange={handleChange} errors={errors} touched={touched} />
+            <FormikField name="password" styles="mt-3" type="password" placeholder={t('auth.password')} handleChange={handleChange} errors={errors} touched={touched} />
 
             <div className="form-group">
               <button type="submit" className="btn btn-primary btn-block mt-3">

@@ -1,4 +1,4 @@
-import api from '.';
+import api from '.'; // eslint-disable-line import/no-cycle
 
 export const register = (username, password) => dispatch => {
   dispatch({ type: 'AUTH_BEGIN' });

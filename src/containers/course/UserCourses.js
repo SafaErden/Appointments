@@ -67,9 +67,9 @@ const UserCourses = () => {
           {t('noCourse')}
         </p>
       ) : (
-        <>
+        <div className="d-flex flex-column">
           {content}
-        </>
+        </div>
       )}
     </>
   );

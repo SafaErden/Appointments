@@ -35,14 +35,13 @@ const CourseDetail = ({ match }) => {
       .then(() => setLoading(false));
   };
 
-  const options = Object.keys(timezones).map(key => (<option value={timezones[key]} key={Math.random()}>{timezones[key]}</option>));
-
+  const options = Object.keys(timezones).map(key => (<option value={timezones[key]} key={Math.random()}>{timezones[key]}</option>));// eslint-disable-line max-len
   const { courses } = useSelector(state => ({
     courses: state.courseReducer.courses,
   }));
 
-  let course = courses.filter(course => course.id == id);
-  course = course[0];
+  let course = courses.filter(course => course.id == id);// eslint-disable-line eqeqeq
+  course = course[0];// eslint-disable-line prefer-destructuring
   return (
     <>
       {!user && history.push('/signin')}
@@ -67,8 +66,8 @@ const CourseDetail = ({ match }) => {
                     {options}
                   </FormikField>
 
-                  <FormikField name="user_id" style="d-none" type="text" />
-                  <FormikField name="course_id" style="d-none" type="text" />
+                  <FormikField name="user_id" styles="d-none" type="text" />
+                  <FormikField name="course_id" styles="d-none" type="text" />
 
                   <button type="submit" className="btn btn-success w-100 mt-3">
                     {t('bookCourse')}
@@ -85,7 +84,7 @@ const CourseDetail = ({ match }) => {
 };
 
 CourseDetail.propTypes = {
-  match: PropTypes.string,
+  match: PropTypes.instanceOf(Object).isRequired,
 };
 
 export default CourseDetail;
