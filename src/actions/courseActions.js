@@ -1,4 +1,4 @@
-import api from './';
+import api from '.';
 import authHeader from './authActions';
 
 export const setCourses = () => async dispatch => {
@@ -17,8 +17,8 @@ export const setCourses = () => async dispatch => {
 export const getCourses = () => async dispatch => {
   try {
     dispatch({ type: 'BEGIN_MY_COURSES' });
-    const response = await api.get(`/my`, { headers: authHeader() });
-    
+    const response = await api.get('/my', { headers: authHeader() });
+
     dispatch({
       type: 'SUCCESS_MY_COURSES',
       payload: response.data,
@@ -31,7 +31,7 @@ export const getCourses = () => async dispatch => {
 export const bookCourse = (userId, courseId, timezone) => async dispatch => {
   try {
     dispatch({ type: 'BEGIN_APPOINTMENT' });
-    const response = await api.post(`/appointments`,  {user_id: userId, course_id: courseId , course_date: timezone} , { headers: authHeader() });
+    const response = await api.post('/appointments', { user_id: userId, course_id: courseId, course_date: timezone }, { headers: authHeader() });
     dispatch({
       type: 'SUCCESS_APPOINTMENT',
       payload: response.data,
@@ -41,10 +41,10 @@ export const bookCourse = (userId, courseId, timezone) => async dispatch => {
   }
 };
 
-export const removeCourse = (id) => async dispatch => {
+export const removeCourse = id => async dispatch => {
   try {
     dispatch({ type: 'BEGIN_MY_COURSES' });
-    const response = await api.delete(`/appointments/${id}`,{id: id}, { headers: authHeader() });
+    const response = await api.delete(`/appointments/${id}`, { id }, { headers: authHeader() });
     dispatch({
       type: 'SUCCESS_MY_COURSES',
       payload: response.data,

@@ -1,8 +1,8 @@
-import api from './';
+import api from '.';
 
- export const register = (username, password) => dispatch => {
+export const register = (username, password) => dispatch => {
   dispatch({ type: 'AUTH_BEGIN' });
-  return api.post(`/users`, {
+  return api.post('/users', {
     username,
     password,
   })
@@ -17,7 +17,7 @@ import api from './';
 
 export const login = (username, password) => dispatch => {
   dispatch({ type: 'AUTH_BEGIN' });
-  return api.post(`/login`, {
+  return api.post('/login', {
     username,
     password,
   })

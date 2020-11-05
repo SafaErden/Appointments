@@ -1,51 +1,53 @@
-import { removeCourse,getCourses } from '../../actions/courseActions';
+import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import Loader from '../../components/Loader';
-import {useTranslation} from "react-i18next";
-import { useHistory, Link } from 'react-router-dom';
-import PropTypes from 'prop-types';
+import { useTranslation } from 'react-i18next';
+import { useHistory } from 'react-router-dom';
 import { getCurrentUser } from '../../actions/authActions';
-import { useState, useEffect } from 'react';
+import Loader from '../../components/Loader';
+import { removeCourse, getCourses } from '../../actions/courseActions';
 
 const UserCourses = () => {
   const dispatch = useDispatch();
-  const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
-  let history = useHistory();
+  const history = useHistory();
   const user = getCurrentUser();
-  const {t, i18n} = useTranslation();
+  const { t } = useTranslation();//
   const { courses } = useSelector(state => ({
-    courses: state.myCourseReducer.myCourses
+    courses: state.myCourseReducer.myCourses,
   }));
 
-  const handleClick = (course_id) =>{
-    setError('');
+  const handleClick = courseId => {
     setLoading(true);
-    dispatch(removeCourse(course_id))
-    .then(res => {
-      if (res) {
-        setLoading(false);
-        setError(res);
-      }
-    })
-    .then(() => setLoading(false));
-  }
+    dispatch(removeCourse(courseId))
+      .then(res => {
+        if (res) {
+          setLoading(false);
+        }
+      })
+      .then(() => setLoading(false));
+  };
 
   useEffect(() => {
     dispatch(getCourses());
   }, [dispatch]);
   const content = courses.map(course => (
     <div key={Math.random()} className="w-100 d-flex justify-content-center my-4 flex-column shadow-lg">
-    <div className="card">
+      <div className="card">
         <div className="card-header">
           <h5 className="card-title">{course.name}</h5>
         </div>
         <div className="card-body">
           <p className="card-text">{course.description}</p>
-          <a onClick={(e) => {
-                    e.preventDefault();
-                    handleClick(course.id);
-                  }} className="btn btn-primary">{t('cancel')}</a>
+          <button
+            type="button"
+            onClick={e => {
+              e.preventDefault();
+              handleClick(course.id);
+            }}
+            className="btn btn-primary"
+          >
+            {t('cancel')}
+          </button>
 
         </div>
         <div className="card-footer text-muted">
@@ -54,30 +56,22 @@ const UserCourses = () => {
       </div>
     </div>
   ));
- 
+
   return (
-      <>
-        {!user&&history.push("/signin")}
-        {loading &&
-          (<Loader loading />)
-        }
-        {!courses.length ? (
+    <>
+      {!user && history.push('/signin')}
+      {loading
+          && (<Loader loading />)}
+      {!courses.length ? (
         <p className="w-100 text-center p-5">
           {t('noCourse')}
         </p>
       ) : (
         <>
           {content}
-        </>)}
+        </>
+      )}
     </>
   );
-}
-UserCourses.propTypes = {
-  history: PropTypes.string,
 };
-
-UserCourses.defaultProps = {
-  history: '/',
-};
-
 export default UserCourses;

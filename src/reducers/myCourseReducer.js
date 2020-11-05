@@ -1,7 +1,7 @@
 const initState = {
-    myCourses : [],
-    loading : false,
-    errors : null,
+  myCourses: [],
+  loading: false,
+  errors: null,
 };
 
 const myCoursesReducer = (state = initState, action) => {
