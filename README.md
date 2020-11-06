@@ -2,7 +2,7 @@
 
 A tablet web app for enrolling macroverse online courses.
 
-![screenshot](./src/asssets/screen.JPG)
+![screenshot](./src/assets/screen.JPG)
 
 ## About this project
 
@@ -37,7 +37,7 @@ DELETE
 - ES6 JavaScript.
 
 ## Live Demo
-For the full working application click [here](https://fathomless-shelf-78681.herokuapp.com/)
+For the full working application click [here](https://macroappointment.netlify.app/)
 
 ## Installation
 To get a local copy up and running follow these simple example steps.
