@@ -1,5 +1,6 @@
 import { Field } from 'formik';
 import React from 'react';
+import PropTypes from 'prop-types'
 
 const FormikField = ({
   classProp = '', styles = '', as = '', name = '', errors = '', touched = '', type = '', ...props
@@ -19,6 +20,16 @@ const FormikField = ({
       {errors[name] && touched[name] && <small className="text-danger m-0 p-0 "><em>{errors[name]}</em></small>}
     </>
   );
+};
+
+FormikField.propTypes = {
+  classProp: PropTypes.string,
+  styles: PropTypes.string,
+  as: PropTypes.string,
+  name: PropTypes.string,
+  errors: PropTypes.string,
+  touched: PropTypes.bool,
+  type: PropTypes.string
 };
 
 export default FormikField;
