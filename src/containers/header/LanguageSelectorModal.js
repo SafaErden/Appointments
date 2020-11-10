@@ -15,9 +15,7 @@ const languages = {
 
 const LanguageSelectorModal = () => {
   const { t } = useTranslation();
-  const options = Object.keys(languages).map(key => {
-    return (<option value={key} key={Math.random()}>{languages[key]}</option>);
-  });
+  const options = Object.keys(languages).map(key => (<option value={key} key={Math.random()}>{languages[key]}</option>));// eslint-disable-line max-len
 
   return (
     <div className="modal fade text-dark" id="languageSelectorModal">

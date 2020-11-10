@@ -27,8 +27,8 @@ FormikField.propTypes = {
   styles: PropTypes.string,
   as: PropTypes.string,
   name: PropTypes.string,
-  errors: PropTypes.instanceOf(Object).isRequired,
-  touched: PropTypes.instanceOf(Object).isRequired,
+  errors: PropTypes.instanceOf(Object),
+  touched: PropTypes.instanceOf(Object),
   type: PropTypes.string,
 };
 

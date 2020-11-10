@@ -1,5 +1,13 @@
 import axios from 'axios';
-import authHeader from './authActions'; // eslint-disable-line import/no-cycle
+
+export function authHeader() {
+  const user = JSON.parse(localStorage.getItem('user'));
+
+  if (user && user.token) {
+    return { Authorization: `Bearer ${user.token}` };
+  }
+  return {};
+}
 
 export default axios.create({
   baseURL: 'https://fathomless-shelf-78681.herokuapp.com/',

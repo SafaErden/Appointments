@@ -1,4 +1,4 @@
-import api from '.'; // eslint-disable-line import/no-cycle
+import api from '.';
 
 export const register = (username, password) => dispatch => {
   dispatch({ type: 'AUTH_BEGIN' });
@@ -36,12 +36,3 @@ export const logout = () => {
 };
 
 export const getCurrentUser = () => JSON.parse(localStorage.getItem('user'));
-
-export default function authHeader() {
-  const user = JSON.parse(localStorage.getItem('user'));
-
-  if (user && user.token) {
-    return { Authorization: `Bearer ${user.token}` };
-  }
-  return {};
-}

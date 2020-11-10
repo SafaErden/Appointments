@@ -17,7 +17,7 @@ const Head = () => {
     isLoggedIn: state.authReducer.isLoggedIn,
   }));
 
-  const { t } = useTranslation();// const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
   return (
     <div className="min-vh-100 d-flex flex-column justify-content-between pl-2">
       <div className="mt-5">
