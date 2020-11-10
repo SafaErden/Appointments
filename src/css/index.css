@@ -74,11 +74,9 @@ a {
 .navbar-fixed-left {
   position: fixed;
   left: 0;
-  width:170px;
+  width: 170px;
 }
 
 .ml-200 {
-  margin-left: 170px!important;
+  margin-left: 170px !important;
 }
-
-
