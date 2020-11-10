@@ -15,7 +15,7 @@ const SignUp = () => {
   const dispatch = useDispatch();
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
-  const { t } = useTranslation();//
+  const { t } = useTranslation();
   const user = getCurrentUser();
   const handleSubmit = values => {
     setError('');
