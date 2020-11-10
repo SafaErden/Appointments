@@ -31,8 +31,7 @@ const CourseDetail = ({ match }) => {
         } else {
           history.push('/myCourses');
         }
-      })
-      .then(() => setLoading(false));
+      });
   };
 
   const options = Object.keys(timezones).map(key => (<option value={timezones[key]} key={Math.random()}>{timezones[key]}</option>));// eslint-disable-line max-len
