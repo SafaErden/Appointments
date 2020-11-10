@@ -35,10 +35,10 @@ const Courses = () => {
     <div key={Math.random()} className={`col-12 col-md-4 col-lg-3 m-0 bg-${bg[index]} transparent`}>
       <Link to={`/courses/${course.id}`}>
         {/* <img className="card-img-top" src="..." alt="Card image cap"/> */}
-        <div className="card-body text-white">
-          <h5 className="card-title">{course.name}</h5>
-          <p className="card-text">{`${course.description.slice(0, 150)}...`}</p>
-        </div>
+        <section className="card-body text-white">
+          <h2 className="card-title h5">{course.name}</h2>
+          <article className="card-text">{`${course.description.slice(0, 150)}...`}</article>
+        </section>
       </Link>
     </div>
   ));

@@ -57,8 +57,8 @@ const CourseDetail = ({ match }) => {
             <p className="card-text h5">{course.description}</p>
             <small><em>macroverse 2020</em></small>
           </div>
-          <div className="col-12 col-md-3">
-            <h3 className="card-title text-white mb-5">{course.name}</h3>
+          <article className="col-12 col-md-3">
+            <h1 className="card-title text-white mb-5 h3">{course.name}</h1>
             <Formik onSubmit={handleSubmit} initialValues={{ timezone: 'UTC-6', user_id: `${user.user}`, course_id: `${id}` }}>
               {() => (
                 <Form>
@@ -75,7 +75,7 @@ const CourseDetail = ({ match }) => {
                 </Form>
               )}
             </Formik>
-          </div>
+          </article>
           <Link to="/" className="btn-circle btn-lg m-3 absolute-btn bg-success text-white"><BsCaretLeft /></Link>
         </div>
       )}

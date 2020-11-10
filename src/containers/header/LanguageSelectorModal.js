@@ -14,11 +14,9 @@ const languages = {
 };
 
 const LanguageSelectorModal = () => {
-  const { t } = useTranslation();//
-  const lang = localStorage.getItem('lang') || 'en';
+  const { t } = useTranslation();
   const options = Object.keys(languages).map(key => {
-    const selected = lang === key ? 'selected' : '';
-    return (<option value={key} key={Math.random()} selected={selected}>{languages[key]}</option>);
+    return (<option value={key} key={Math.random()}>{languages[key]}</option>);
   });
 
   return (

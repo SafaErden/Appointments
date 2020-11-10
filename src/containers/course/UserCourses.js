@@ -36,7 +36,7 @@ const UserCourses = () => {
         <div className="card-header">
           <h5 className="card-title">{course.name}</h5>
         </div>
-        <div className="card-body">
+        <article className="card-body">
           <p className="card-text">{course.description}</p>
           <button
             type="button"
@@ -49,7 +49,7 @@ const UserCourses = () => {
             {t('cancel')}
           </button>
 
-        </div>
+        </article>
         <div className="card-footer text-muted">
           <small><em>{course.course_date}</em></small>
         </div>
@@ -67,9 +67,9 @@ const UserCourses = () => {
           {t('noCourse')}
         </p>
       ) : (
-        <div className="d-flex flex-column">
+        <section className="d-flex flex-column">
           {content}
-        </div>
+        </section>
       )}
     </>
   );

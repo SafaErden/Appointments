@@ -5,7 +5,6 @@ import {
   FaFacebook, FaTwitter, FaGoogleDrive, FaPinterestP, FaVine, FaRegCopyright,
 } from 'react-icons/fa';
 import { useTranslation } from 'react-i18next';
-import LanguageSelectorModal from './LanguageSelectorModal';
 import { logout } from '../../actions/authActions';
 
 const Head = () => {
@@ -82,7 +81,6 @@ const Head = () => {
           <FaRegCopyright />
         </small>
       </div>
-      <LanguageSelectorModal />
     </div>
   );
 };
