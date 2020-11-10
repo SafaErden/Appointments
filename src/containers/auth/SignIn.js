@@ -42,7 +42,7 @@ const SignIn = () => {
         }}
         validationSchema={formValidationSchema}
       >
-        {({ handleChange, errors, touched }) => (
+        {({ errors, touched }) => (
           <Form className="col-12 col-sm-9">
             <div className="text-center mb-3">
               {loading
@@ -53,8 +53,8 @@ const SignIn = () => {
                 <FaUnlockAlt />
               </div>
             </div>
-            <FormikField name="username" styles="mt-3" type="text" placeholder={t('auth.username')} handleChange={handleChange} errors={errors} touched={touched} />
-            <FormikField name="password" styles="mt-3" type="password" placeholder={t('auth.password')} handleChange={handleChange} errors={errors} touched={touched} />
+            <FormikField name="username" styles="mt-3" type="text" placeholder={t('auth.username')} errors={errors} touched={touched} />
+            <FormikField name="password" styles="mt-3" type="password" placeholder={t('auth.password')} errors={errors} touched={touched} />
 
             <div className="form-group">
               <button type="submit" className="btn btn-primary btn-block mt-3">

@@ -3,7 +3,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const FormikField = ({
-  classProp = '', styles = '', as = '', name = '', errors = '', touched = '', type = '', ...props
+  classProp, styles, as, name, errors, touched, type, ...props
 }) => {
   const className = errors[name] && touched[name] ? 'border rounded border-danger' : '';
   return (
@@ -27,8 +27,8 @@ FormikField.propTypes = {
   styles: PropTypes.string,
   as: PropTypes.string,
   name: PropTypes.string,
-  errors: PropTypes.string,
-  touched: PropTypes.bool,
+  errors: PropTypes.instanceOf(Object).isRequired,
+  touched: PropTypes.instanceOf(Object).isRequired,
   type: PropTypes.string,
 };
 
@@ -37,8 +37,8 @@ FormikField.defaultProps = {
   styles: '',
   as: '',
   name: '',
-  errors: '',
-  touched: false,
+  errors: {},
+  touched: {},
   type: '',
 };
 
