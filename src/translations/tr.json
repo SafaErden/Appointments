@@ -1,0 +1,49 @@
+{   "brand": "Macroverse",
+    "language": "Dil",
+    "selectLanguage": "Dil seçimini yapın.",
+    "languages ": {
+        "en": "İngilizce",
+        "tr": "Türkçe"
+    },
+    "close": "Kapat",
+    "details": "Detaylar",
+    "goBack": "Geri Dön",
+    "bookCourse": "Başvur",
+    "reserved": "TÜM HAKLARI SAKLIDIR",
+    "noCourse": "Hiç kurs bulunamadı!",
+    "cancel": "İptal et",
+    "validation": {
+    "blank": "Boş bırakılamaz.",
+    "min2": "En az iki karakterden oluşmalıdır.",
+    "validMail": "Lütfen geçerli bir eposta adresi girin.",
+    "complexity": "Should contain at leat X char, Y nums....",
+    "notAllowed": "Only XYZ are allowed",
+    "matchs": "Şifreler eşleşmelidir.",
+    "unique": "Seçiminiz bir başka hesap tarafından kullanılıyot, lütfen bir başka seçim yapın."
+},
+"auth" : {
+    "signup": "Hesap Oluştur",
+    "signin": "Giriş Yap",
+    "signout": "Çıkış Yap",
+    "remind": "Hatırlatıcı",
+    "getStarted": "Ücretsiz hesabınızı başlatın ve yeni dünyalar keşfedin",
+    "username": "Kullanıcı Adı",
+    "email": "Eposta Adresi",
+    "password": "Şifre",
+    "confirm": "Şifre Tekrar",
+    "agree": "Hesap oluşturarak onaylamış oluyorsunuz:",
+    "terms": "Koşullar & Gizlilik İlkesi",
+    "or": "VEYA",
+    "have?": "Bir hesabınız var mı?",
+    "forgot?": "Şifrenizi mi unuttunuz?",
+    "dontHave?": "Henüz bir hesabınız yok mu?",
+    "letsSend": "Eposta adresinizi ve kullanıcı adınızı girin ve size giriş yapabilmeniz için bir link gönderelim.",
+    "sendMe": "Linkimi gönder",
+    "ifDont?": "Eğer bir hesabınız yoksa,",
+    "remember?": "Şifrenizi hatırladınız mı?"
+},
+"footer": {
+    "courses": "Tüm Kurslar",
+    "library": "Kurslarım"
+}
+}

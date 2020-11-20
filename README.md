@@ -1,70 +1,79 @@
-# Getting Started with Create React App
+# Macroverse Course Service
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A tablet web app for enrolling macroverse online courses.
 
-## Available Scripts
+![screenshot](./src/assets/screen.JPG)
 
-In the project directory, you can run:
+## About this project
 
-### `yarn start`
+This Application is built as a front end app consuming a Ruby on Rails [API](https://fathomless-shelf-78681.herokuapp.com/) separately deployed to Heroku.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## End Points
+This application consumes a couple of endpoints served by the [API](https://fathomless-shelf-78681.herokuapp.com/) accessible online as the base Url;
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+POST
+-/users - (create user account)
+-/appointments - (create appointment)
+-/login - (create user session)
 
-### `yarn test`
+GET
+-/courses - (fetch all courses)
+-/my - (fetch booked courses)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+DELETE
+-/appointments/:id - (delete appointment)
 
-### `yarn build`
+## Built With
+- ReactJs
+- React Hooks
+- Rails API
+- Redux
+- Axios
+- Netlify (For deployment)
+- Jest
+- CSS (Modules)
+- HTML
+- Webpack
+- ES6 JavaScript.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Live Demo
+For the full working application click [here](https://macroappointment.netlify.app/)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Installation
+To get a local copy up and running follow these simple example steps.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Setup
+Clone [this](https://github.com/SafaErden/Appointments) repo
 
-### `yarn eject`
+### Follow:
+1. cd into the project directory
+2. run npm install
+3. run npm start
+4. Navigate to localhost:3000
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Author
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+👤 **Safa ERDEN**
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+- Github: [@SafaErden](https://github.com/SafaErden)
+- Twitter: [@safaerden](https://twitter.com/safaerden)
+- Linkedin: [SafaErden](https://www.linkedin.com/in/safaerden/)
+- Mql5: [safaerden](https://www.mql5.com/en/users/safaerden)
+- Email: [safaerden](mailto:safaerden@gmail.com)
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-## Learn More
+## 🤝 Contributing
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Contributions, issues and feature requests are welcome!
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Feel free to check the [issues page](https://github.com/SafaErden/Appointments/issues)
 
-### Code Splitting
+## Show your support
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Give a ⭐️ if you like this project!
 
-### Analyzing the Bundle Size
+## Acknowledgments
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+You can access all the design info (color, typography, layouts) in this [link](https://www.behance.net/gallery/26425031/Vespa-Responsive-Redesign)
 
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Design idea by [Murat Korkmaz on Behance](https://www.behance.net/muratk)

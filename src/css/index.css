@@ -1,0 +1,82 @@
+
+.theBorder {
+  border: 1px solid #dbdbdb;
+}
+
+.bg-second {
+  background-color: #f1f2f3;
+}
+
+a {
+  color: #181717;
+}
+
+.divider-text {
+  position: relative;
+  text-align: center;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.divider-text span {
+  padding: 7px;
+  font-size: 12px;
+  position: relative;
+  z-index: 2;
+}
+
+.divider-text::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  border-bottom: 1px solid #ddd;
+  top: 55%;
+  left: 0;
+  z-index: 1;
+}
+
+.centered-label {
+  display: flex;
+  align-items: center;
+}
+
+.brand {
+  font-family: 'Merienda One', Helvetica, sans-serif;
+  color: rgba(0, 0, 0, 0.7);
+  text-shadow: 3px 3px 3px #fff;
+  transform: rotate(-10deg);
+}
+
+.transparent {
+  opacity: 0.75;
+}
+
+.cover {
+  background-image: url("../assets/bg.jpg");
+  background-size: cover;
+}
+
+.absolute-btn {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.btn-circle.btn-lg {
+  width: 50px;
+  height: 50px;
+  padding: 10px 16px;
+  font-size: 18px;
+  line-height: 1.33;
+  border-radius: 25px;
+}
+
+.navbar-fixed-left {
+  position: fixed;
+  left: 0;
+  width: 170px;
+}
+
+.ml-200 {
+  margin-left: 170px !important;
+}
