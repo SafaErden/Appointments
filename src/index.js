@@ -1,17 +1,25 @@
-import React from 'react';
+import React, { Suspense } from 'react';
+import './translations/i18n';
 import ReactDOM from 'react-dom';
-import './index.css';
+import { createStore, applyMiddleware } from 'redux';
+import { Provider } from 'react-redux';
+import thunk from 'redux-thunk';
+import i18next from 'i18next';
+import rootReducer from './reducers/index';
+import 'bootstrap/dist/css/bootstrap.css';
+import 'jquery/dist/jquery.min';
+import 'bootstrap/dist/js/bootstrap.min';
 import App from './App';
-import reportWebVitals from './reportWebVitals';
+import './css/index.css';
 
+const store = createStore(rootReducer, applyMiddleware(thunk));
+const lang = localStorage.getItem('lang') || 'en';
+i18next.changeLanguage(lang);
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
+  <Suspense fallback="loading">
+    <Provider store={store}>
+      <App />
+    </Provider>
+  </Suspense>,
+  document.getElementById('root'),
 );
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
